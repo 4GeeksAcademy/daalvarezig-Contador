@@ -13,6 +13,13 @@ import '../styles/index.css'
 import Home from './components/Home';
 let timer = 0
 const root = ReactDOM.createRoot(document.getElementById('root'))
+
+// reseteo manual
+const reset = () => {
+  timer = 0;
+};
+
+
 //forzando el renderizado cada un segundo
 setInterval(() => {
 
@@ -21,7 +28,7 @@ setInterval(() => {
 
   root.render(
     <React.StrictMode>
-      <Home timer={timer} />
+      <Home timer={timer} onReset={reset} />
     </React.StrictMode>,
   )
   timer++

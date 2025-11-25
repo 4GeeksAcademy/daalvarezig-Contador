@@ -2,7 +2,7 @@ import React from "react";
 import Digit from "./digit.jsx";
 
 //create your first component
-const Home = ({timer}) => {
+const Home = ({timer, onReset}) => {
 
 //Convertimos un número a string y lo dividimos en digitos
 
@@ -21,7 +21,8 @@ const Home = ({timer}) => {
 		<div className="d-flex flex-column justify-content-center m-auto">
 		   <h1 className="text-center mb-3 ">Arrancamos!!!!</h1>
 		   <div className="text-center d-flex gap-1">
-		  	<Digit digit={<i className="fa-solid fa-clock clock-icon"></i>} />	
+		  	<Digit digit={<i className="fa-solid fa-clock clock-icon"
+				   onClick={onReset} style={{ cursor: "pointer"}}></i>} />	
 				{digits.map((d, i) => (
 					<Digit key={i} digit={d} />
 					))}	
